@@ -31,7 +31,7 @@ if($SecurePassword) {
 }
 
 $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
-$cert.Import($CertifiatePath,$password,'DefaultKeySet')
+$cert.Import($CertificatePath,$password,'DefaultKeySet')
 
 Logging -Message "Importing certificate to Cert:\LocalMachine\My"
 Import-PfxCertificate -FilePath $CertificatePath -CertStoreLocation Cert:\LocalMachine\My -Password ($password | ConvertTo-SecureString -AsPlainText -Force)
